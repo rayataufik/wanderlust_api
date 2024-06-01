@@ -8,6 +8,3 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use('/api/contents', itemsRoutes);
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});

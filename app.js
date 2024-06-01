@@ -12,3 +12,4 @@ app.listen(port, () => {
   console.log(`API listening on PORT ${port} `)
 })
 
+module.exports = app;

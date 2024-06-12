@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .endpoint {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border-left: 5px solid #007bff;
+    }
+
+    pre {
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Wanderlust API Documentation</h1>
+
+  <section class="endpoint">
+    <h2>GET /api/contents</h2>
+    <p>Retrieves a list of all content items.</p>
+    <h3>Example Request:</h3>
+    <pre>
+          GET /api/contents HTTP/1.1
+          Host: localhost:3000
+  </pre>
+    <h3>Example Response:</h3>
+    <pre>
+          {
+            "message": "Items retrieved successfully",
+            "data": [
+              {
+                "id": "XIvaZb3KDn21oDNeWJR2r",
+                "title": "Sample Title",
+                "image_url": "http://example.com/image.png",
+                "description": "Sample Description"
+              }
+            ]
+          }
+  </pre>
+  </section>
+
+  <section class="endpoint">
+    <h2>GET /api/contents/{id}</h2>
+    <p>Retrieves a single content item by ID.</p>
+    <h3>Example Request:</h3>
+    <pre>
+          GET /api/contents/XIvaZb3KDn21oDNeWJR2r HTTP/1.1
+          Host: localhost:3000
+    </pre>
+    <h3>Example Response:</h3>
+    <pre>
+          {
+            "message": "Item retrieved successfully",
+            "data": {
+              "id": "XIvaZb3KDn21oDNeWJR2r",
+              "title": "Sample Title",
+              "image_url": "http://example.com/image.png",
+              "description": "Sample Description"
+            }
+          }
+    </pre>
+  </section>
+
+  <section class="endpoint">
+    <h2>POST /api/contents/create</h2>
+    <p>
+      Creates a new content item. Requires title, image_url, and description
+      in the request body.
+    </p>
+    <h3>Example Request:</h3>
+    <pre>
+          POST /api/contents/create HTTP/1.1
+          Host: localhost:3000
+          Content-Type: application/json
+
+          {
+            "title": "New Title",
+            "image_url": "http://example.com/newimage.png",
+            "description": "New description of the item"
+          }
+    </pre>
+    <h3>Example Response:</h3>
+    <pre>
+          {
+            "message": "Item created successfully",
+          }
+    </pre>
+  </section>
+
+  <section class="endpoint">
+    <h2>PUT /api/contents/{id}</h2>
+    <p>Updates an existing content item by ID. Requires title, image_url, and description in the request body.</p>
+    <h3>Example Request:</h3>
+    <pre>
+          PUT /api/contents/XIvaZb3KDn21oDNeWJR2r HTTP/1.1
+          Host: localhost:3000
+          Content-Type: application/json
+  
+          {
+            "title": "Updated Title",
+            "image_url": "http://example.com/updatedimage.png",
+            "description": "Updated description of the item"
+          }
+      </pre>
+    <h3>Example Response:</h3>
+    <pre>
+          {
+            "message": "Item updated successfully",
+          }
+      </pre>
+  </section>
+
+  <section class="endpoint">
+    <h2>DELETE /api/contents/{id}</h2>
+    <p>Deletes a content item by ID.</p>
+    <h3>Example Request:</h3>
+    <pre>
+          DELETE /api/contents/XIvaZb3KDn21oDNeWJR2r HTTP/1.1
+          Host: localhost:3000
+      </pre>
+    <h3>Example Response:</h3>
+    <pre>
+          {
+            "message": "Item deleted successfully"
+          }
+      </pre>
+  </section>
+</body>
+
+</html>

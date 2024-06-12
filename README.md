@@ -1,5 +1,3 @@
-  API Documentation body { font-family: Arial, sans-serif; } .endpoint { margin-top: 20px; padding: 10px; background-color: #f4f4f4; border-left: 5px solid #007bff; } pre { background-color: #e9ecef; padding: 10px; border-radius: 5px; }
-
 Wanderlust API Documentation
 ============================
 
